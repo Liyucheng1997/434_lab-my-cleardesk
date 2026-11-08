@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src *; media-src * blob:" />
+    <title>晴窗远程</title>
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="viewer.css" />
+    <script src="vendor/peerjs.min.js"></script>
+    <script type="module" src="viewer.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="vbar" id="bar">
+        <div class="vbar-info"><i class="dot busy" id="stDot"></i><b id="hostName">正在连接…</b><span class="vstats" id="stats"></span></div>
+        <div class="vbar-tools" id="tools" hidden>
+          <button class="tool" id="tDisplay" title="切换显示器"><span data-icon="monitor"></span><span class="tool-label" id="tDisplayLabel">显示器</span><span data-icon="chevron"></span></button>
+          <button class="tool" id="tQuality" title="画质"><span data-icon="quality"></span><span class="tool-label" id="tQualityLabel">均衡</span><span data-icon="chevron"></span></button>
+          <button class="tool" id="tKeys" title="快捷键"><span data-icon="keyboard"></span><span class="tool-label">快捷键</span><span data-icon="chevron"></span></button>
+          <button class="tool" id="tClip" title="同步剪贴板"><span data-icon="clip"></span><span class="tool-label">剪贴板</span></button>
+          <button class="tool" id="tFile" title="发送文件到对方电脑（也可以直接拖进窗口）"><span data-icon="file"></span><span class="tool-label">发文件</span></button>
+          <button class="tool" id="tView" title="仅观看（不操作对方电脑）"><span data-icon="mouse"></span><span class="tool-label">控制</span></button>
+          <button class="tool" id="tFit" title="适应窗口 / 原始大小"><span data-icon="fit"></span></button>
+          <button class="tool" id="tFull" title="全屏（F11）"><span data-icon="fullscreen"></span></button>
+          <button class="tool tool-danger" id="tClose" title="断开连接"><span data-icon="power"></span><span class="tool-label">断开</span></button>
+        </div>
+      </div>
+      <div class="stage" id="stage" tabindex="0">
+        <video id="video" autoplay muted playsinline disablepictureinpicture></video>
+        <div class="overlay" id="overlay">
+          <div class="ov-card">
+            <div class="spinner" id="ovSpin"></div>
+            <div class="ov-title" id="ovTitle">正在连接…</div>
+            <div class="ov-msg" id="ovMsg"></div>
+            <div class="ov-actions" id="ovActions"></div>
+          </div>
+        </div>
+        <div class="drop" id="drop"><div>松开即可发送到对方电脑</div></div>
+      </div>
+      <div class="hot" id="hot"></div>
+      <div class="transfers" id="transfers"></div>
+      <input type="file" id="filePick" multiple hidden />
+    </div>
+  </body>
+</html>

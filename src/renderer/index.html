@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src *; media-src * blob:" />
+    <title>ClearDesk 晴窗远程</title>
+    <link rel="stylesheet" href="tokens.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="vendor/peerjs.min.js"></script>
+    <script type="module" src="app.js"></script>
+  </head>
+  <body>
+    <div id="app">
+      <div class="titlebar"><span class="titlebar-name">ClearDesk 晴窗远程</span></div>
+      <div class="layout">
+        <nav class="sidebar">
+          <div class="brand">
+            <img src="../../build/icon.png" alt="" />
+            <div>
+              <div class="brand-name">晴窗远程</div>
+              <div class="brand-sub">ClearDesk</div>
+            </div>
+          </div>
+          <button class="nav-item active" data-page="home"><span data-icon="remote"></span>远程控制</button>
+          <button class="nav-item" data-page="recent"><span data-icon="clock"></span>最近连接</button>
+          <button class="nav-item" data-page="settings"><span data-icon="gear"></span>设置</button>
+          <button class="nav-item" data-page="about"><span data-icon="info"></span>关于</button>
+          <div class="sidebar-foot">
+            <div class="update-pill" id="updatePill" hidden></div>
+            <div class="status-line" id="sideStatus"><i class="dot"></i><span>正在连接服务器…</span></div>
+          </div>
+        </nav>
+        <main class="content" id="content"></main>
+      </div>
+    </div>
+  </body>
+</html>

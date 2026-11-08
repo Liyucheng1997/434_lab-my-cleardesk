@@ -1,0 +1,107 @@
+{
+  "name": "cleardesk",
+  "version": "1.0.0",
+  "description": "ClearDesk 晴窗远程 - 识别码连接的远程桌面软件",
+  "author": "Yucheng LI",
+  "license": "MIT",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder --win --x64",
+    "pack": "electron-builder --win --x64 --dir",
+    "server": "node server/server.js"
+  },
+  "dependencies": {
+    "electron-updater": "^6.8.11",
+    "express": "^5.3.0",
+    "koffi": "^3.3.7",
+    "peer": "^1.0.2"
+  },
+  "devDependencies": {
+    "electron": "^45.2.1",
+    "electron-builder": "^26.18.0",
+    "peerjs": "^1.5.5"
+  },
+  "homepage": "https://github.com/Liyucheng1997/cleardesk",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Liyucheng1997/cleardesk.git"
+  },
+  "keywords": [
+    "remote-desktop",
+    "webrtc",
+    "electron",
+    "远程控制",
+    "远程桌面"
+  ],
+  "build": {
+    "appId": "io.github.liyucheng1997.cleardesk",
+    "productName": "ClearDesk",
+    "copyright": "Copyright © 2026 Yucheng LI",
+    "directories": {
+      "output": "dist",
+      "buildResources": "build"
+    },
+    "files": [
+      "src/**/*",
+      "build/icon.png",
+      "build/tray.png",
+      "package.json",
+      "LICENSE",
+      "!node_modules/**/*.map",
+      "!node_modules/**/*.d.ts",
+      "!node_modules/**/{CHANGELOG,README,readme}.md",
+      "!node_modules/koffi/{vendor,doc}/**"
+    ],
+    "asarUnpack": [
+      "node_modules/koffi/**",
+      "node_modules/@koromix/**"
+    ],
+    "npmRebuild": false,
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "Liyucheng1997",
+        "repo": "cleardesk"
+      }
+    ],
+    "electronLanguages": [
+      "zh-CN",
+      "en-US"
+    ],
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        },
+        {
+          "target": "portable",
+          "arch": [
+            "x64"
+          ]
+        }
+      ],
+      "icon": "build/icon.ico",
+      "executableName": "ClearDesk"
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "晴窗远程",
+      "installerLanguages": [
+        "zh_CN"
+      ],
+      "language": "2052",
+      "artifactName": "ClearDesk-Setup-${version}.exe"
+    },
+    "portable": {
+      "artifactName": "ClearDesk-${version}-portable.exe"
+    }
+  }
+}

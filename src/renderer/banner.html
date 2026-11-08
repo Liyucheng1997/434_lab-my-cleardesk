@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'" />
+    <title>正在被远程控制</title>
+    <link rel="stylesheet" href="tokens.css" />
+    <style>
+      html, body { background: transparent; }
+      .bn { margin: 6px; height: 40px; display: flex; align-items: center; gap: 10px; padding: 0 6px 0 14px; background: rgba(28, 28, 30, 0.94); color: #f5f5f7; border-radius: 99px; box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3); -webkit-app-region: drag; user-select: none; }
+      .dot { width: 8px; height: 8px; border-radius: 50%; background: #30d158; flex: none; animation: pulse 1.6s ease-in-out infinite; }
+      @keyframes pulse { 50% { opacity: 0.35; } }
+      .txt { flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-size: 12.5px; }
+      .txt b { font-weight: 600; }
+      .btn { -webkit-app-region: no-drag; height: 28px; padding: 0 14px; font-size: 12px; }
+      .btn-x { background: #ff453a; color: #fff; }
+      .btn-x:hover { background: #ff6961; }
+      .btn-g { background: rgba(255, 255, 255, 0.12); color: #f5f5f7; }
+      .btn-g:hover { background: rgba(255, 255, 255, 0.2); }
+    </style>
+    <script type="module" src="banner.js"></script>
+  </head>
+  <body>
+    <div class="bn">
+      <i class="dot"></i>
+      <div class="txt" id="txt"></div>
+      <button class="btn btn-g" id="show">详情</button>
+      <button class="btn btn-x" id="dis">断开</button>
+    </div>
+  </body>
+</html>
