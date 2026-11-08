@@ -3,7 +3,7 @@
 const { app, net } = require('electron');
 const settings = require('./settings');
 
-const REPO = 'Liyucheng1997/cleardesk';
+const REPO = 'Liyucheng1997/434_lab-my-cleardesk';
 const FIRST_CHECK_DELAY = 15 * 1000;
 const CHECK_INTERVAL = 4 * 60 * 60 * 1000;
 

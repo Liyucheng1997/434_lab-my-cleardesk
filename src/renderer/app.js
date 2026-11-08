@@ -385,7 +385,7 @@ function renderAbout() {
       <div class="feature"><b>剪贴板 & 文件</b><span>双向同步剪贴板文字，拖拽文件即可发送到对方电脑。</span></div>
       <div class="feature"><b>安全</b><span>验证码每次启动更换，错误 5 次锁定 1 分钟，可要求本机确认。</span></div>
     </div></div>`);
-  $('#gh', el).onclick = () => api.app.openExternal('https://github.com/Liyucheng1997/cleardesk');
+  $('#gh', el).onclick = () => api.app.openExternal('https://github.com/Liyucheng1997/434_lab-my-cleardesk');
   $('#upd', el).onclick = () => api.update.check();
   return el;
 }

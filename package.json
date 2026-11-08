@@ -22,10 +22,10 @@
     "electron-builder": "^26.18.0",
     "peerjs": "^1.5.5"
   },
-  "homepage": "https://github.com/Liyucheng1997/cleardesk",
+  "homepage": "https://github.com/Liyucheng1997/434_lab-my-cleardesk",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Liyucheng1997/cleardesk.git"
+    "url": "https://github.com/Liyucheng1997/434_lab-my-cleardesk.git"
   },
   "keywords": [
     "remote-desktop",
@@ -62,7 +62,7 @@
       {
         "provider": "github",
         "owner": "Liyucheng1997",
-        "repo": "cleardesk"
+        "repo": "434_lab-my-cleardesk"
       }
     ],
     "electronLanguages": [

@@ -19,7 +19,7 @@
 
 ## 下载
 
-到 [Releases](https://github.com/Liyucheng1997/cleardesk/releases) 下载：
+到 [Releases](https://github.com/Liyucheng1997/434_lab-my-cleardesk/releases) 下载：
 
 - `ClearDesk-Setup-x.y.z.exe`：安装版，**会自动更新**（后台下载，点“立即重启”即完成）
 - `ClearDesk-x.y.z-portable.exe`：便携版，免安装；有新版本时只提示，需手动下载
@@ -41,7 +41,7 @@
 - 自建信令服务器（推荐长期使用）：在有公网 IP 的服务器上
 
   ```bash
-  git clone https://github.com/Liyucheng1997/cleardesk && cd cleardesk && npm i --omit=dev
+  git clone https://github.com/Liyucheng1997/434_lab-my-cleardesk && cd 434_lab-my-cleardesk && npm i --omit=dev
   PORT=9000 npm run server
   ```
 
